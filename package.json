@@ -1,0 +1,22 @@
+{
+  "name": "node-sandbox",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitHub Codespaces Node 前端沙箱 · 逆熵 devcontainer 模板",
+  "type": "module",
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "vite": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0"
+  }
+}

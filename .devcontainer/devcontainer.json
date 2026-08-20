@@ -1,0 +1,51 @@
+{
+  "name": "Node Frontend Dev (逆熵)",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "upgradePackages": true
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Continue.continue",
+        "MS-CEINTL.vscode-language-pack-zh-hans",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        },
+        "eslint.validate": [
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "vue",
+          "html"
+        ],
+        "files.eol": "\n",
+        "files.autoSave": "onFocusChange",
+        "prettier.singleQuote": true,
+        "prettier.semi": false,
+        "prettier.trailingComma": "es5",
+        "prettier.printWidth": 120
+      }
+    }
+  },
+  "postCreateCommand": "npm install -g prettier eslint && mkdir -p ~/.continue && cp .devcontainer/continue.config.json ~/.continue/config.json && if [ -f package.json ]; then npm install; fi",
+  "remoteUser": "node",
+  "forwardPorts": [3000, 5173, 8080, 8090],
+  "portsAttributes": {
+    "3000": { "label": "Dev Server", "onAutoForward": "notify" },
+    "5173": { "label": "Vite", "onAutoForward": "notify" },
+    "8080": { "label": "Static Server", "onAutoForward": "notify" },
+    "8090": { "label": "Local Preview", "onAutoForward": "notify" }
+  }
+}
